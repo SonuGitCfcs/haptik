@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-  <html>
-   <head>
-   <title>Haptik JS SDK Integration Demo</title>
-   <meta charset="UTF-8" />
-   <meta content="width=device-width; initial-scale=1.0;" name="viewport" />
-   </head>
-   <body>
-   <script>
-   window.haptikInitSettings = {
-   "business-id": "5090",
-   "client-id": "caaabf7468a753b7b70e3fdbdd98af250454c324",
-   "base-url": "https://staging.hellohaptik.com/",
-   };
-   </script>
-   <script
-   type="text/javascript"
-   charset="UTF-8"
-   src="https://toolassets.haptikapi.com/platform/javascript-xdk/production/loader.js"
-   ></script>
-   </body>
-  </html>
+<html>
+<head>
+  <title>Haptik JS SDK Integration Demo</title>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width; initial-scale=1.0;" name="viewport" />
+  
+</head>
+<body>
+  <script>
+    window.haptikInitSettings = {
+      "business-id": "5090",
+      "client-id": "caaabf7468a753b7b70e3fdbdd98af250454c324",
+      "base-url": "https://staging.hellohaptik.com/",
+    };
+
+    function test(){
+        console.log("Bot triggered")
+    }
+
+    document.addEventListener('haptik_sdk', function() {
+    // HaptikSDK is available now
+    HaptikSDK.launchMessage("Hi", test, true);
+    });
+    
+  </script>
+  <script 
+  type="text/javascript" 
+  charset="UTF-8"
+  src="https://toolassets.haptikapi.com/platform/javascript-xdk/production/loader.js"></script>
+  
+</body>
+</html>
